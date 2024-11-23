@@ -1,5 +1,14 @@
-import { HttpInterceptorFn } from '@angular/common/http';
+import {HttpInterceptorFn} from "@angular/common/http";
+import {catchError, throwError} from "rxjs";
 
-export const httpInterceptor: HttpInterceptorFn = (req, next) => {
-  return next(req);
+import {environment} from "../../../environments/environment";
+
+export const httpInterceptor: HttpInterceptorFn = (request, next) => {
+  const clonedRequest = request.clone({
+    url: `${environment.BASE_URL}${request.url}`,
+  });
+
+  return next(clonedRequest).pipe(
+    catchError((error) => throwError(() => error))
+  )
 };

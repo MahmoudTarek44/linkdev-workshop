@@ -1,11 +1,19 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {RouterOutlet} from "@angular/router";
+
+import {initFlowbite} from "flowbite";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  imports: [RouterOutlet],
+  template: `
+    <router-outlet/>
+  `
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
+  ngOnInit(): void {
+    initFlowbite();
+  }
 }
