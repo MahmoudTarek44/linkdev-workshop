@@ -11,10 +11,11 @@ const tailwindConfig = {
         purple: '#F215B6',
         light_green: "#A6E51C",
         light_gray: '#74747433',
+        dark_gray: "#5E6282",
         demo_red: '#E72228',
         gradiant_bg: '#D5AEE4',
       },
-      typography: {
+      fontFamily: {
         poppins: ["Poppins", 'serif'],
         open_sans: ["Open Sans", 'serif'],
         volkhov: ["Volkhov", 'serif'],

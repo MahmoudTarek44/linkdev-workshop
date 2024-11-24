@@ -1,12 +1,12 @@
 import {Component} from '@angular/core';
-
-import {TranslatePipe} from "@ngx-translate/core";
+import {TopNewsComponent} from "../../sections/top-news/top-news.component";
 
 @Component({
   selector: 'home',
   standalone: true,
-  imports: [TranslatePipe],
-  template: `<h1>{{ 'test' | translate }}</h1>
+  imports: [TopNewsComponent],
+  template: `
+    <top-news/>
   `
 })
 export default class HomeComponent {

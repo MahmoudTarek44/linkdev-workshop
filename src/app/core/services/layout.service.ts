@@ -11,19 +11,19 @@ export class LayoutService {
   _direction = signal<Direction>(DIR.LTR);
   _isLoading = signal(false)
 
-  _onMobile = signal<boolean>(false);
-  _onTablet = signal<boolean>(false);
+  readonly _onMobile = signal<boolean>(false);
+  readonly _onTablet = signal<boolean>(false);
 
-  private _mediaObserver = inject(BreakpointObserver);
+  private readonly _breakpointObserver = inject(BreakpointObserver);
 
   constructor() {
-    this._mediaObserver
+    this._breakpointObserver
       .observe(screenSize.MAX_W_40)
       .pipe(takeUntilDestroyed())
       .subscribe((res: BreakpointState) => this._onMobile.set(res.matches)
       );
 
-    this._mediaObserver
+    this._breakpointObserver
       .observe([screenSize.MAX_W_64, screenSize.MIN_W_40])
       .pipe(takeUntilDestroyed())
       .subscribe((res: BreakpointState) => this._onTablet.set(res.breakpoints[screenSize.MAX_W_64] &&
