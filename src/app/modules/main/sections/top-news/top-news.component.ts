@@ -30,7 +30,8 @@ import {TopNewsService} from "./top-news.service";
                 [ngClass]="{
                     '!bg-secondary !text-white': selectedCategoryId() === undefined
                     }"
-                class="!bg-light_gray !text-black !rounded-lg" mat-flat-button>{{ 'All news' | translate }}
+                class="!bg-light_gray !rounded-lg !text-dark_gray !font-poppins"
+                mat-flat-button>{{ 'All news' | translate }}
         </button>
 
         @for (category of _topNewsService._newsCategories(); track category.id) {
@@ -38,7 +39,7 @@ import {TopNewsService} from "./top-news.service";
                   [ngClass]="{
                     '!bg-secondary !text-white': selectedCategoryId() === category.id
                     }"
-                  class="!bg-light_gray !text-black !rounded-lg" mat-flat-button
+                  class="!bg-light_gray !rounded-lg !text-dark_gray !font-poppins" mat-flat-button
                   (click)="_selectCategory(category.id)">{{ category.name | translate }}
           </button>
         }
