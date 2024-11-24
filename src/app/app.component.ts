@@ -1,25 +1,40 @@
-import {Component, inject, OnInit} from '@angular/core';
+import {Component, DestroyRef, inject, OnInit} from '@angular/core';
+import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 import {RouterOutlet} from "@angular/router";
 
-import {TranslateService} from "@ngx-translate/core";
+import {LangChangeEvent, TranslateService} from "@ngx-translate/core";
 import {initFlowbite} from "flowbite";
+
+import {DIR, LayoutService} from "./core/services/layout.service";
+import {LANG} from "./core/services/translation.service";
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet],
   template: `
-    <router-outlet/>
+    <div [dir]="layout._direction()">
+      <router-outlet/>
+    </div>
   `
 })
 export class AppComponent implements OnInit {
   translate = inject(TranslateService)
+  layout = inject(LayoutService);
+  destroyRef = inject(DestroyRef)
 
   constructor() {
-    this.translate.addLangs(['ar', 'en']);
+    this.translate.addLangs([LANG.EN, LANG.AR]);
   }
 
   ngOnInit(): void {
     initFlowbite();
+
+    this.translate.onLangChange.pipe(
+      takeUntilDestroyed(this.destroyRef)
+    ).subscribe((event: LangChangeEvent) => {
+      this.layout._direction.set(event.lang === LANG.AR ? DIR.RTL : DIR.LTR);
+    })
   }
 }

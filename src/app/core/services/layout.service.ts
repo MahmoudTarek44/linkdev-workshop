@@ -8,10 +8,11 @@ import {Direction} from "@angular/cdk/bidi";
   providedIn: "root",
 })
 export class LayoutService {
-  readonly _direction = signal<Direction>(DIR.LTR);
+  _direction = signal<Direction>(DIR.LTR);
+  _isLoading = signal(false)
 
-  readonly _onMobile = signal<boolean>(false);
-  readonly _onTablet = signal<boolean>(false);
+  _onMobile = signal<boolean>(false);
+  _onTablet = signal<boolean>(false);
 
   private _mediaObserver = inject(BreakpointObserver);
 

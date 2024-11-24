@@ -6,6 +6,7 @@ import {provideRouter} from '@angular/router';
 import {provideTranslateService, TranslateLoader} from "@ngx-translate/core";
 import {HttpLoaderFactory} from "./core/services/translation.service";
 
+import {loadingInterceptor} from "./core/interceptors/loading.interceptor";
 import {httpInterceptor} from "./core/interceptors/http.interceptor";
 import {authInterceptor} from "./core/interceptors/auth.interceptor";
 import {routes} from './app.routes';
@@ -14,7 +15,7 @@ import {routes} from './app.routes';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({eventCoalescing: true}),
-    provideHttpClient(withInterceptors([httpInterceptor, authInterceptor])),
+    provideHttpClient(withInterceptors([httpInterceptor, authInterceptor, loadingInterceptor])),
     provideAnimationsAsync(),
     provideRouter(routes),
 
