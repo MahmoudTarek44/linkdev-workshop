@@ -1,10 +1,17 @@
 @use "app/styles" as app;
 
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
 body, html {
-  font-family: "Poppins", sans-serif, Serif;
+  font-family: "Poppins", sans-serif, Serif !important;
+}
+
+.p-carousel {
+  padding: 0;
 }

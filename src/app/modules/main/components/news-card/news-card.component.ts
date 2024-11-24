@@ -29,7 +29,7 @@ import {TopNewsService} from "../../sections/top-news/top-news.service";
     <mat-card class="!max-w-[360px] !h-[485px] !bg-transparent">
       <img class="h-[300px] !rounded-b-none" mat-card-image [src]="article().urlToImage" alt="article-image">
       <mat-card-content>
-        <p class="line-clamp-3 my-4">
+        <p class="line-clamp-3 my-4 font-poppins text-dark_gray">
           {{ (article().description! || 'No description...') | translate }}
         </p>
 
@@ -71,7 +71,7 @@ import {TopNewsService} from "../../sections/top-news/top-news.service";
 export class NewsCardComponent {
   article = input.required<Article>()
   protected topNewsService = inject(TopNewsService);
-  
+
   protected _categoriesList = new Map([['1', 'Technology'], ['2', 'Sports'], ['3', 'Health'], ['4', 'Economics'], ['5', 'Art']])
 }
 
