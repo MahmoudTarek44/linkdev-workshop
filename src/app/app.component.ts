@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {RouterOutlet} from "@angular/router";
 
+import {TranslateService} from "@ngx-translate/core";
 import {initFlowbite} from "flowbite";
 
 @Component({
@@ -12,6 +13,11 @@ import {initFlowbite} from "flowbite";
   `
 })
 export class AppComponent implements OnInit {
+  translate = inject(TranslateService)
+
+  constructor() {
+    this.translate.addLangs(['ar', 'en']);
+  }
 
   ngOnInit(): void {
     initFlowbite();

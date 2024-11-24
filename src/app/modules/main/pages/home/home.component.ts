@@ -1,10 +1,13 @@
 import {Component} from '@angular/core';
 
+import {TranslatePipe} from "@ngx-translate/core";
+
 @Component({
   selector: 'home',
   standalone: true,
-  imports: [],
-  template: `<h1>Welcome Back</h1>`
+  imports: [TranslatePipe],
+  template: `<h1>{{ 'test' | translate }}</h1>
+  `
 })
 export default class HomeComponent {
 }

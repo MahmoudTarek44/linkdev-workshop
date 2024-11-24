@@ -1,4 +1,4 @@
-import {HttpInterceptorFn} from "@angular/common/http";
+import {HttpErrorResponse, HttpInterceptorFn} from "@angular/common/http";
 import {catchError, throwError} from "rxjs";
 
 import {environment} from "../../../environments/environment";
@@ -9,6 +9,6 @@ export const httpInterceptor: HttpInterceptorFn = (request, next) => {
   });
 
   return next(clonedRequest).pipe(
-    catchError((error) => throwError(() => error))
+    catchError((error: HttpErrorResponse) => throwError(() => error))
   )
 };
