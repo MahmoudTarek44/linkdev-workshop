@@ -3,7 +3,6 @@ import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 import {RouterOutlet} from "@angular/router";
 
 import {LangChangeEvent, TranslateService} from "@ngx-translate/core";
-import {initFlowbite} from "flowbite";
 
 import {DIR, LayoutService} from "./core/services/layout.service";
 import {LANG} from "./core/services/translation.service";
@@ -30,7 +29,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    initFlowbite();
 
     this.translate.onLangChange.pipe(
       takeUntilDestroyed(this.destroyRef)
