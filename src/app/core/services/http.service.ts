@@ -7,9 +7,9 @@ import {noLoadingToken} from "../interceptors/loading.interceptor";
   providedIn: 'root'
 })
 export class HttpService {
-  _HTTP = inject(HttpClient)
+  private readonly _HTTP = inject(HttpClient)
 
-  _requestContext = new HttpContext()
+  private readonly _requestContext = new HttpContext()
 
   _fetchData<T>(
     endPoint: string,

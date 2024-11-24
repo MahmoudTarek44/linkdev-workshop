@@ -1,0 +1,10 @@
+// TODO: Add custom material components overrides
+
+:root {
+  --mdc-chip-container-shape-radius: 18px;
+  --mdc-chip-outline-width: 0px;
+}
+
+.mat-mdc-menu-content {
+  padding: 0 !important;
+}
