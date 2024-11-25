@@ -7,11 +7,15 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body, html {
   font-family: "Poppins", sans-serif, Serif !important;
 }
 
 .p-carousel {
   padding: 0;
+  height: 100%;
+}
+
+.p-carousel-items-container, .p-carousel-content, .p-carousel-container {
+  height: 100%;
 }
