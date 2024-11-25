@@ -11,7 +11,7 @@ import {CarouselModule} from 'primeng/carousel';
   imports: [CarouselModule, BannerCardComponent],
   template: `
 
-    <div class="relative h-[calc(100vh_-_4rem)]">
+    <div class="relative h-[100vh]">
       <p-carousel
         [page]="_activeSlideNumber()"
         [value]="_tempSlidesJson"
