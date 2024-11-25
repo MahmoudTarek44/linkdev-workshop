@@ -1,0 +1,29 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "title": "Crafty Mind",
+      "imageUrl": "/images/service1.png"
+    },
+    {
+      "id": 2,
+      "title": "Services",
+      "imageUrl": "/images/service2.png"
+    },
+    {
+      "id": 3,
+      "title": "Envision",
+      "imageUrl": "/images/service3.png"
+    },
+    {
+      "id": 4,
+      "title": "Dynamic 365",
+      "imageUrl": "/images/service4.png"
+    },
+    {
+      "id": 5,
+      "title": "Transformation",
+      "imageUrl": "/images/service5.jpg"
+    }
+  ]
+}
