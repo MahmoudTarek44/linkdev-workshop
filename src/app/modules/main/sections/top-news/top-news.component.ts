@@ -22,7 +22,7 @@ import {TopNewsService} from "./top-news.service";
   template: `
     <section id="top-news" class="flex flex-col items-center justify-center my-4">
       <h4 class="text-dark_gray font-semibold text-lg font-poppins mb-2">{{ 'Media' |translate }}</h4>
-      <h2 class="font-volkhov font-bold text-5xl mb-8">{{ 'Top News' }}</h2>
+      <h2 class="font-poppins font-bold text-5xl mb-8">{{ 'Top News' }}</h2>
 
       <div class="flex flex-wrap items-center justify-center gap-8 mb-8">
         <button type="button"

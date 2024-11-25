@@ -11,7 +11,7 @@ import {CarouselModule} from 'primeng/carousel';
   imports: [CarouselModule, BannerCardComponent],
   template: `
 
-    <div class="relative h-fit lg:mx-[140px]">
+    <div class="relative h-[calc(100vh_-_4rem)]">
       <p-carousel
         [page]="_activeSlideNumber()"
         [value]="_tempSlidesJson"
@@ -26,7 +26,8 @@ import {CarouselModule} from 'primeng/carousel';
       </p-carousel>
 
       <!--  Custom carousel paginator  -->
-      <div class="flex items-center justify-between absolute bottom-14 left-8 w-[300px] h-10">
+      <div
+        class="flex items-center justify-between absolute left-[50px] bottom-[50px] lg:left-[150px] xl:bottom-[130px] 2xl:left-[300px] w-[300px] h-10">
         @for (slide of _tempSlidesJson; track slide.id) {
           <div (click)="_activeSlideNumber.set(slide.id)"
                class="rounded-full h-8 w-8 cursor-pointer"

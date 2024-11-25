@@ -4,7 +4,9 @@ import {Component} from '@angular/core';
   selector: 'things-we-do',
   standalone: true,
   imports: [],
-  template: ``
+  template: `
+  
+  `
 })
 export class ThingsWeDoComponent {
 
