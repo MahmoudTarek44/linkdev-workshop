@@ -55,11 +55,17 @@ import {TopNewsService} from "../../sections/top-news/top-news.service";
             </button>
 
             <mat-menu #menu="matMenu" class="!p-0 !h-fit">
-              <div class="rounded-lg flex items-center justify-center">
+              <div class="rounded-lg flex items-center justify-center w-40">
                 <!-- TODO: Use social media icons -->
-                <button class="p-1 h-10 bg-[#3B5998]">FaceBook</button>
-                <button class="p-1 h-10 bg-[#00B9FF]">Twitter</button>
-                <button class="p-1 h-10 bg-[#FF6666]">Messages</button>
+                <button class="p-1 h-10 bg-[#3B5998] text-white flex-1 text-base">
+                  <i class='bx bxl-facebook'></i>
+                </button>
+                <button class="p-1 h-10 bg-[#00B9FF] text-white flex-1 text-base">
+                  <i class='bx bxl-twitter'></i>
+                </button>
+                <button class="p-1 h-10 bg-[#FF6666] text-white flex-1 text-base">
+                  <i class='bx bxs-envelope'></i>
+                </button>
               </div>
             </mat-menu>
           </div>
